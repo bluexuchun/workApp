@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Toolbar
-        android:layout_height="60dp"
+<LinearLayout
+        android:id="@+id/commonHeader"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/wave"
+        android:orientation="vertical"
+        android:gravity="center"
+>
+    <TextView
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:textSize="18dp"
+            android:textColor="@color/colorWhite"
+            android:text="text"
+            android:gravity="center_vertical"/>
 
-        xmlns:android="http://schemas.android.com/apk/res/android"></Toolbar>
+</LinearLayout>

@@ -6,8 +6,13 @@ import android.os.Build
 import android.support.v4.graphics.ColorUtils
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.view.WindowManager
+import android.widget.RelativeLayout
 import com.moxun.tagcloudlib.view.TagCloudView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.header.*
+import org.jetbrains.anko.activityManager
 import widiazine.bluexuchun.workapp.R
 import widiazine.bluexuchun.workapp.adapter.TagsAdapter
 import widiazine.bluexuchun.workapp.model.TagsModel
@@ -24,7 +29,9 @@ class MainActivity : BaseActivity(), TagCloudView.OnTagClickListener{
     override fun init() {
         super.init()
         for (i in 0..30) {
-
+            /**
+             * 随机颜色
+             */
             var r = Integer.toHexString(Random.nextInt(256)).toUpperCase()
             var g = Integer.toHexString(Random.nextInt(256)).toUpperCase()
             var b = Integer.toHexString(Random.nextInt(256)).toUpperCase()
@@ -47,6 +54,16 @@ class MainActivity : BaseActivity(), TagCloudView.OnTagClickListener{
      */
     override fun onItemClick(parent: ViewGroup?, view: View?, position: Int) {
 
+    }
+
+    /**
+     * 图片沉浸式状态栏
+     */
+    fun setStatusBar(){
+        statusImgView()
+        var statusHeight = getStatusHeight()
+        var toolBarParams = toolBar.layoutParams
+        toolBarParams.height = statusHeight
     }
 
 }

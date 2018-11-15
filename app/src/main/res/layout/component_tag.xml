@@ -11,7 +11,7 @@
             android:id="@+id/tagColor"
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/radius"
     />
     <TextView
             android:id="@+id/tagName"

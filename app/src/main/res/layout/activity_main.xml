@@ -9,6 +9,8 @@
         android:orientation="vertical"
 >
 
+    <include layout="@layout/header"></include>
+
     <com.moxun.tagcloudlib.view.TagCloudView
             android:id="@+id/tags"
             android:layout_width="match_parent"
@@ -20,12 +22,6 @@
 
 
     </com.moxun.tagcloudlib.view.TagCloudView>
-
-    <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@drawable/wave"
-    />
 
 
 </LinearLayout>

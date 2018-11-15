@@ -3,12 +3,14 @@ package widiazine.bluexuchun.workapp.ui.activity
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import com.jaeger.library.StatusBarUtil
 
 abstract class BaseActivity:AppCompatActivity(){
 
@@ -28,8 +30,9 @@ abstract class BaseActivity:AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(getLayoutResId())
+//        StatusBarUtil.setColor(this, Color.BLUE)
         init()
+        setContentView(getLayoutResId())
     }
 
     /**
@@ -112,4 +115,25 @@ abstract class BaseActivity:AppCompatActivity(){
         return result == PackageManager.PERMISSION_GRANTED
     }
 
+    /**
+     * 获取状态栏的高度
+     */
+    fun getStatusHeight():Int{
+        var result = 0
+        var resourceId = resources.getIdentifier("status_bar_height","dimen","android")
+        if(resourceId > 0){
+            result = resources.getDimensionPixelOffset(resourceId)
+        }
+        return result
+    }
+
+    /**
+     * 图片沉浸式状态栏
+     */
+    fun statusImgView(){
+        var decorView = window.decorView
+        decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+        window.navigationBarColor = Color.TRANSPARENT
+        window.statusBarColor = Color.TRANSPARENT
+    }
 }
