@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <declare-styleable name="TextGradient">
-        <attr name="color1" format="color"></attr>
-        <attr name="color2" format="color"></attr>
-    </declare-styleable>
-</resources>

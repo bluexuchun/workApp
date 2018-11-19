@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:background="@color/colorWhite"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="@color/colorWhite"
+              android:orientation="vertical"
+              android:id="@+id/allTouch"
 >
     <com.makeramen.roundedimageview.RoundedImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,8 +20,8 @@
             app:riv_border_color="#333333"
             app:riv_mutate_background="true"
             app:riv_oval="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="84dp"
+            android:layout_gravity="center_horizontal"
     />
     <LinearLayout
             android:id="@+id/form"
@@ -25,14 +29,14 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_centerVertical="true"
+            android:layout_marginTop="70dp"
             android:orientation="vertical"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
     >
         <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="30dp"
                 >
                 <TextView
@@ -48,8 +52,8 @@
                         android:gravity="center_vertical"
                 >
                     <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:background="@mipmap/phone"
                             android:adjustViewBounds="true"
                             android:scaleType="centerCrop"
@@ -64,13 +68,14 @@
                             android:layout_weight="1"
                             android:hint="请输入手机号"
                             android:background="@null"
+                            android:textSize="14dp"
                     />
                 </LinearLayout>
 
         </RelativeLayout>
         <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginBottom="30dp"
         >
             <TextView
@@ -86,8 +91,8 @@
                     android:gravity="center_vertical"
             >
                 <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
                         android:background="@mipmap/password"
                         android:adjustViewBounds="true"
                         android:scaleType="centerCrop"
@@ -102,6 +107,7 @@
                         android:layout_weight="1"
                         android:hint="请输入密码"
                         android:background="@null"
+                        android:textSize="14dp"
                 />
             </LinearLayout>
         </RelativeLayout>
@@ -133,13 +139,11 @@
             >
                 <widiazine.bluexuchun.workapp.widget.TextGradient
                         android:id="@+id/canceltext"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="取消"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="注册"
                         android:textSize="15sp"
                         android:gravity="center"
-                        app:color1="#FDCC30"
-                        app:color2="#000"
                 />
             </RelativeLayout>
 
@@ -155,6 +159,7 @@
             android:layout_marginRight="80dp"
             android:orientation="vertical"
             android:layout_alignParentBottom="true"
+            android:layout_marginTop="43dp"
     >
         <LinearLayout
                 android:layout_width="match_parent"
@@ -164,7 +169,7 @@
         >
             <TextView
                     android:layout_width="0dp"
-                    android:layout_height="2dp"
+                    android:layout_height="1dp"
                     android:layout_weight="1"
                     android:background="@drawable/lineleft"
             />
@@ -179,7 +184,7 @@
             />
             <TextView
                     android:layout_width="0dp"
-                    android:layout_height="2dp"
+                    android:layout_height="1dp"
                     android:layout_weight="1"
                     android:background="@drawable/lineright"
             />
@@ -215,4 +220,4 @@
 
 
 
-</RelativeLayout>
+</LinearLayout>

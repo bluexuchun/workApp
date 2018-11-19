@@ -7,12 +7,17 @@ import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
-import com.jaeger.library.StatusBarUtil
+import me.jessyan.autosize.AutoSizeConfig
+import me.jessyan.autosize.internal.CustomAdapt
+import me.jessyan.autosize.unit.Subunits
 
-abstract class BaseActivity:AppCompatActivity(){
+abstract class BaseActivity:AppCompatActivity(),CustomAdapt{
 
     /**
      * 对话框
@@ -30,9 +35,12 @@ abstract class BaseActivity:AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        StatusBarUtil.setColor(this, Color.BLUE)
-        init()
+        if(specialSit()){
+            setAllScreen()
+        }
         setContentView(getLayoutResId())
+        configUnits()
+        init()
     }
 
     /**
@@ -48,6 +56,10 @@ abstract class BaseActivity:AppCompatActivity(){
      */
     abstract fun getLayoutResId(): Int
 
+    /**
+     * 特殊状况
+     */
+    abstract fun specialSit():Boolean
     /**
      * 展示对话框 progress
      */
@@ -135,5 +147,22 @@ abstract class BaseActivity:AppCompatActivity(){
         decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
         window.navigationBarColor = Color.TRANSPARENT
         window.statusBarColor = Color.TRANSPARENT
+    }
+
+    /**
+     * 自适应
+     */
+    fun configUnits(){
+        var autoSize = AutoSizeConfig.getInstance().unitsManager
+        autoSize.setSupportDP(false)
+            .setSupportSubunits(Subunits.MM)
+    }
+
+    /**
+     * 设置全屏
+     */
+    fun setAllScreen(){
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
     }
 }

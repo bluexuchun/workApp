@@ -19,6 +19,11 @@ import widiazine.bluexuchun.workapp.model.TagsModel
 import kotlin.random.Random
 
 class MainActivity : BaseActivity(), TagCloudView.OnTagClickListener{
+    override fun specialSit(): Boolean = false
+
+    override fun isBaseOnWidth(): Boolean = false
+
+    override fun getSizeInDp(): Float = 667.toFloat()
 
     val list = mutableListOf<TagsModel>()
 

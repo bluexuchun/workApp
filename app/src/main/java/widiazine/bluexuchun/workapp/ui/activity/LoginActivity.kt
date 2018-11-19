@@ -1,12 +1,16 @@
 package widiazine.bluexuchun.workapp.ui.activity
 
-import android.view.Window
-import android.view.WindowManager
+import android.util.Log
+import android.view.View
 import kotlinx.android.synthetic.main.activity_login.*
 import widiazine.bluexuchun.workapp.R
 import widiazine.bluexuchun.workapp.contract.LoginContract
 
 class LoginActivity:BaseActivity(),LoginContract.View{
+    override fun specialSit(): Boolean {
+        return true
+    }
+
     override fun getLayoutResId(): Int {
         return R.layout.activity_login
     }
@@ -14,10 +18,12 @@ class LoginActivity:BaseActivity(),LoginContract.View{
     override fun init() {
         super.init()
         /**
-         * 设置全屏
+         * 点击空白的地方 隐藏软键盘
          */
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        allTouch.setOnTouchListener { v, event ->
+            isTouchView(event, listOf<View>(phone,password))
+        }
+
     }
 
     /**
@@ -32,6 +38,14 @@ class LoginActivity:BaseActivity(),LoginContract.View{
      */
     override fun onLoadFail() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun isBaseOnWidth(): Boolean {
+        return false
+    }
+
+    override fun getSizeInDp(): Float {
+        return 667.toFloat()
     }
 
 
