@@ -6,8 +6,8 @@ import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.Window
@@ -39,8 +39,8 @@ abstract class BaseActivity:AppCompatActivity(),CustomAdapt{
             setAllScreen()
         }
         setContentView(getLayoutResId())
-        configUnits()
         init()
+        configUnits()
     }
 
     /**
@@ -164,5 +164,23 @@ abstract class BaseActivity:AppCompatActivity(),CustomAdapt{
     fun setAllScreen(){
         this.requestWindowFeature(Window.FEATURE_NO_TITLE)
         this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
+    }
+
+    /**
+     * 设置状态栏颜色以及文字的颜色模式
+     * 文字的颜色分为两种亮色模式(SYSTEM_UI_FLAG_LIGHT_STATUS_BAR) 和 暗色模式(SYSTEM_UI_FLAG_VISIBLE)
+     * 传入3个参数 当前window 和 type 1 || 2 和 颜色值
+     */
+    fun setStatusBar(window: Window,type:Int,color:Int){
+        var mWindow = window
+        mWindow.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        mWindow.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        mWindow.statusBarColor = ContextCompat.getColor(this, color)
+        if(type == 1){
+            mWindow.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        }else{
+            mWindow.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+        }
+
     }
 }
