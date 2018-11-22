@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="tgText" format="string"/>
     <attr name="color1" format="color"/>
     <attr name="color2" format="color"/>
 
     <declare-styleable name="TextGradient">
-        <attr name="tgText" />
         <attr name="color1" />
         <attr name="color2" />
     </declare-styleable>

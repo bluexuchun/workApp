@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">workApp</string>
     <string name="register">默认</string>
+    <string name="no_login">还未登陆</string>
 </resources>

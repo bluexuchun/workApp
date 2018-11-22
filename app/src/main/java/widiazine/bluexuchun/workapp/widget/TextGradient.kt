@@ -11,7 +11,7 @@ import widiazine.bluexuchun.workapp.R
 
 class TextGradient:TextView {
 
-    var onSectionChangeListener:OnSectionChangeListener? = null
+//    var onSectionChangeListener:OnSectionChangeListener? = null
 
     private var isCount = false
 
@@ -25,11 +25,7 @@ class TextGradient:TextView {
             field = value
             invalidate()
         }
-    private var textWord:String = "默认"
-        set(value) {
-            field = value
-            invalidate()
-        }
+
     @JvmOverloads
     constructor(context: Context):this(context,null){
 
@@ -47,69 +43,67 @@ class TextGradient:TextView {
     private fun init(context: Context,attrs: AttributeSet?,defStyleAttr: Int) {
         var arrayType = context.obtainStyledAttributes(attrs,R.styleable.TextGradient)
 
-        textWord =
-                if(arrayType.getString(R.styleable.TextGradient_tgText) != null)
-                {
-                    arrayType.getString(R.styleable.TextGradient_tgText)
-                }else{
-                    textWord
-                }
         color1 = arrayType.getColor(R.styleable.TextGradient_color1,color1)
         color2 = arrayType.getColor(R.styleable.TextGradient_color2,color2)
 
         arrayType.recycle()
-
-        Log.v("textWord","${textWord}")
     }
 
 
-    override fun onDraw(canvas: Canvas?) {
-        super.onDraw(canvas)
+//    override fun onDraw(canvas: Canvas?) {
+//        super.onDraw(canvas)
+//        var mPaint = paint
+//        var FontMetrices = paint.getFontMetricsInt()
+//        var mText = text.toString().trim()
+//        var mTextBound = Rect()
+//        mPaint.getTextBounds(mText,0,mText.length,mTextBound)
+//        var mLinearGradient = LinearGradient(0f,(0 + FontMetrices.leading).toFloat(),0f,(measuredHeight - FontMetrices.descent).toFloat(), color1,color2,Shader.TileMode.CLAMP)
+//        mPaint.setShader(mLinearGradient)
+//        /**
+//         * 文字居中
+//         */
+//        mPaint.textAlign = Paint.Align.CENTER
+//        /**
+//         * 垂直居中
+//         */
+//        var baseline = (top + measuredHeight - FontMetrices.bottom - FontMetrices.top) / 2
+//        canvas?.drawText(mText,((measuredWidth - left)/2).toFloat(),baseline.toFloat(), mPaint)
+//    }
+
+    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+        super.onLayout(changed, left, top, right, bottom)
         var mPaint = paint
         var FontMetrices = paint.getFontMetricsInt()
-        var mText = textWord
-        var mTextBound = Rect()
-        mPaint.getTextBounds(mText,0,mText.length,mTextBound)
         var mLinearGradient = LinearGradient(0f,(0 + FontMetrices.leading).toFloat(),0f,(measuredHeight - FontMetrices.descent).toFloat(), color1,color2,Shader.TileMode.CLAMP)
         mPaint.setShader(mLinearGradient)
-        /**
-         * 文字居中
-         */
-        mPaint.textAlign = Paint.Align.CENTER
-        /**
-         * 垂直居中
-         */
-        var baseline = (top + measuredHeight - FontMetrices.bottom - FontMetrices.top) / 2
-        canvas?.drawText(textWord,((measuredWidth - left)/2).toFloat(),baseline.toFloat(), mPaint)
     }
 
-    override fun onTouchEvent(event: MotionEvent): Boolean {
-        when(event.action){
-            MotionEvent.ACTION_DOWN -> {
-                /**
-                 * 实现倒计时
-                 */
-                if(!isCount){
-                    var mCount = object :CountDownTimer(60000,1000){
-                        override fun onFinish() {
-                            textWord = "获取验证码"
-                        }
+//    override fun onTouchEvent(event: MotionEvent): Boolean {
+//        when(event.action){
+//            MotionEvent.ACTION_DOWN -> {
+//                /**
+//                 * 实现倒计时
+//                 */
+//                 if(!isCount){
+//                     var mCount = object :CountDownTimer(60000,1000){
+//                         override fun onFinish() {
+//                             isCount = false
+//                             textWord = "获取验证码"
+//                         }
+//
+//                         override fun onTick(millisUntilFinished: Long) {
+//                             isCount = true
+//                             textWord = "重新获取${millisUntilFinished/1000}s"
+//                         }
+//                     }
+//                     mCount.start()
+//                 }
+//            }
+//        }
+//        return true
+//    }
 
-                        override fun onTick(millisUntilFinished: Long) {
-                            isCount = true
-                            textWord = "重新获取${millisUntilFinished/1000}s"
-                        }
-                    }
-                    mCount.start()
-                }
-
-
-            }
-        }
-        return true
-    }
-
-    interface OnSectionChangeListener{
-        fun sendCode()
-    }
+//    interface OnSectionChangeListener{
+//        fun sendCode()
+//    }
 }

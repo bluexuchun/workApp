@@ -41,6 +41,7 @@ abstract class BaseActivity:AppCompatActivity(),CustomAdapt{
         setContentView(getLayoutResId())
         init()
         configUnits()
+
     }
 
     /**
@@ -112,22 +113,6 @@ abstract class BaseActivity:AppCompatActivity(),CustomAdapt{
     }
 
     /**
-     * 申请权限
-     */
-
-    fun applyWriteExternalStoragePermission(array: Array<String>) {
-        ActivityCompat.requestPermissions(this,array,0)
-    }
-
-    /**
-     * 检查是否有权限
-     */
-    fun hasWriteExternalStoragePermission(permission:String): Boolean {
-        var result = ActivityCompat.checkSelfPermission(this, permission)
-        return result == PackageManager.PERMISSION_GRANTED
-    }
-
-    /**
      * 获取状态栏的高度
      */
     fun getStatusHeight():Int{
@@ -181,6 +166,5 @@ abstract class BaseActivity:AppCompatActivity(),CustomAdapt{
         }else{
             mWindow.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
         }
-
     }
 }

@@ -75,6 +75,7 @@
                         android:hint="请输入手机号"
                         android:background="@null"
                         android:textSize="14dp"
+                        android:inputType="number"
                 />
             </LinearLayout>
 
@@ -114,6 +115,7 @@
                         android:hint="请输入密码"
                         android:background="@null"
                         android:textSize="14dp"
+                        android:inputType="textPassword"
                 />
             </LinearLayout>
         </RelativeLayout>
@@ -152,6 +154,7 @@
                         android:hint="确认密码"
                         android:background="@null"
                         android:textSize="14dp"
+                        android:inputType="textPassword"
                 />
             </LinearLayout>
         </RelativeLayout>
@@ -191,6 +194,7 @@
                         android:hint="请输入验证码"
                         android:background="@null"
                         android:textSize="14dp"
+                        android:inputType="number"
                 />
                 <RelativeLayout
                         android:layout_width="100dp"
@@ -207,10 +211,9 @@
                             android:id="@+id/textGrad"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
+                            android:gravity="center"
                             android:textSize="13dp"
-                            workApp:tgText="获取验证码"
+                            android:text="获取验证码"
                             workApp:color1="#ffd94f"
                             workApp:color2="#ffad42"
                     />
@@ -219,6 +222,7 @@
         </RelativeLayout>
         
         <Button
+                android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/btn_login"

@@ -1,0 +1,25 @@
+<tabs xmlns:app="http://schemas.android.com/apk/res-auto">
+    <tab
+            id="@+id/home"
+            icon="@drawable/ic_home"
+            title="首页" />
+    <tab
+            id="@+id/learn"
+            icon="@drawable/ic_learn"
+            title="学习情况" />
+    <tab
+            id="@+id/add"
+            icon="@drawable/ic_plus"
+            title=""
+            inActiveColor="#333333"
+            activeColor="#333333"
+    />
+    <tab
+            id="@+id/work"
+            icon="@drawable/ic_work"
+            title="作业" />
+    <tab
+            id="@+id/user"
+            icon="@drawable/ic_user"
+            title="个人中心" />
+</tabs>
