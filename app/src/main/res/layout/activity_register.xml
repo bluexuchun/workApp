@@ -14,9 +14,10 @@
             android:id="@+id/toolBar"
     >
         <ImageView
+                android:id="@+id/back"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@mipmap/ic_back"
+                android:src="@mipmap/left_back"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="16dp"
         />
@@ -205,7 +206,7 @@
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:background="@drawable/wave"
+                            android:background="@drawable/waveradius"
                     />
                     <widiazine.bluexuchun.workapp.widget.TextGradient
                             android:id="@+id/textGrad"

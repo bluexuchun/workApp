@@ -1,13 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/fragment_home"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/home"
+                android:orientation="vertical"
+                android:background="@color/colorIndex"
 >
-    <TextView
+    <com.moxun.tagcloudlib.view.TagCloudView
+            android:id="@+id/tags"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="首页"
-    />
+            android:layout_height="0dp"
+            app:autoScrollMode="uniform"
+            app:radiusPercent="0.7"
+            android:layout_weight="2"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+    >
 
-</RelativeLayout>
+
+    </com.moxun.tagcloudlib.view.TagCloudView>
+
+    <LinearLayout
+            android:layout_width="220dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+    >
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/borderbox"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+        >
+            <com.makeramen.roundedimageview.RoundedImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:id="@+id/logo"
+                    android:src="@mipmap/ic_loading"
+                    android:scaleType="fitCenter"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+            />
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+            >
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="鹏儿子"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14dp"
+                />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="学生"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14dp"
+                />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/borderbox"
+                android:textSize="14dp"
+                android:text="商城"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+        />
+    </LinearLayout>
+
+</LinearLayout>

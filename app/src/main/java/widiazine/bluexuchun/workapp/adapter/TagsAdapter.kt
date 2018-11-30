@@ -3,6 +3,7 @@ package widiazine.bluexuchun.workapp.adapter
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import com.moxun.tagcloudlib.view.TagsAdapter

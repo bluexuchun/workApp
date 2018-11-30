@@ -30,7 +30,7 @@ class SplashActivity:BaseActivity(),SplashContract.View{
 
     override fun isBaseOnWidth(): Boolean = false
 
-    override fun getSizeInDp(): Float = 667f
+    override fun getSizeInDp(): Float = 667F
 
     override fun isLogined() {
         handler.postDelayed({

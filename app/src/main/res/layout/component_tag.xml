@@ -9,15 +9,15 @@
 >
     <ImageView
             android:id="@+id/tagColor"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
             android:background="@drawable/radius"
     />
     <TextView
             android:id="@+id/tagName"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:textSize="12dp"
+            android:textSize="8dp"
             android:text="bluexuchun"
     >
     </TextView>

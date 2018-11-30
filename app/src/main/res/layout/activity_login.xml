@@ -138,7 +138,7 @@
                     android:gravity="center"
             >
                 <widiazine.bluexuchun.workapp.widget.TextGradient
-                        android:id="@+id/canceltext"
+                        android:id="@+id/btn_register"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="注册"

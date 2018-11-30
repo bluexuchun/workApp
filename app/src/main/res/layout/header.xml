@@ -12,12 +12,39 @@
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="0dp"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:textSize="18dp"
-            android:textColor="@color/colorWhite"
-            android:text="text"
-            android:gravity="center_vertical"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+        <ImageView
+                android:id="@+id/header_back"
+                android:layout_width="30dp"
+                android:layout_height="28dp"
+                android:src="@mipmap/left"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone"
+        />
+        <ImageView
+                android:id="@+id/header_black_back"
+                android:layout_width="30dp"
+                android:layout_height="28dp"
+                android:src="@mipmap/left_back"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone"
+        />
+        <TextView
+                android:id="@+id/header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:textSize="16dp"
+                android:textColor="@color/colorWhite"
+                android:text="text"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+        />
+    </RelativeLayout>
+
 
 </LinearLayout>

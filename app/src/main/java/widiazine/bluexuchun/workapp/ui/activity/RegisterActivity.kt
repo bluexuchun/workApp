@@ -76,7 +76,7 @@ class RegisterActivity:BaseActivity(),RegisterContract.View{
 
         // 初始的权限申请
         rxPermissions
-            .requestEach(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.ACCESS_FINE_LOCATION)
+            .requestEach(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.INTERNET)
             .subscribe(){
                 if(it.granted){
                     // 权限通过
@@ -113,6 +113,14 @@ class RegisterActivity:BaseActivity(),RegisterContract.View{
                         }
                     }
             }
+        }
+
+        /**
+         * 返回
+         */
+        back.setOnClickListener {
+            finish()
+            overridePendingTransition(R.anim.anim_in,R.anim.anim_out)
         }
 
 

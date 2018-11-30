@@ -8,4 +8,8 @@
     <color name="colorC">#CCCCCC</color>
     <color name="colorMain">#ffd94f</color>
     <color name="colorSec">#ffad42</color>
+    <color name="colorIndex">#ffd322</color>
+    <color name="colorWord">#666666</color>
+    <color name="colorGray">#DBDBDB</color>
+    <color name="colorRed">#F24936</color>
 </resources>

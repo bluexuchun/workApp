@@ -1,5 +1,6 @@
 package widiazine.bluexuchun.workapp.ui.activity
 
+import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.pm.PackageManager
@@ -13,9 +14,11 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import kotlinx.android.synthetic.main.header.*
 import me.jessyan.autosize.AutoSizeConfig
 import me.jessyan.autosize.internal.CustomAdapt
 import me.jessyan.autosize.unit.Subunits
+import org.jetbrains.anko.act
 
 abstract class BaseActivity:AppCompatActivity(),CustomAdapt{
 
@@ -160,11 +163,37 @@ abstract class BaseActivity:AppCompatActivity(),CustomAdapt{
         var mWindow = window
         mWindow.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         mWindow.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        mWindow.statusBarColor = ContextCompat.getColor(this, color)
+        mWindow.statusBarColor = color
         if(type == 1){
             mWindow.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         }else{
             mWindow.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
         }
+    }
+
+    /**
+     * 图片沉浸式状态栏
+     */
+    fun setImgsBar(){
+        statusImgView()
+        var statusHeight = getStatusHeight()
+        var toolBarParams = toolBar.layoutParams
+        toolBarParams.height = statusHeight
+    }
+
+    /**
+     * fragment 状态栏设置
+     * 参数一 头部背景颜色
+     * 参数二 字体颜色
+     * 参数三 文字
+     */
+    fun setFragmentBar(backgroundColor:Int?,textColor:Int,title:String?){
+        if(backgroundColor != null){
+            commonHeader.setBackgroundColor(backgroundColor!!)
+        }
+        header_title.setTextColor(textColor)
+        header_title.text = title
+        var toolBarParams = toolBar.layoutParams
+        toolBarParams.height = 0
     }
 }

@@ -3,6 +3,7 @@ package widiazine.bluexuchun.workapp.ui.activity
 import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.startActivity
 import widiazine.bluexuchun.workapp.R
 import widiazine.bluexuchun.workapp.contract.LoginContract
 
@@ -22,6 +23,9 @@ class LoginActivity:BaseActivity(),LoginContract.View{
          */
         allTouch.setOnTouchListener { v, event ->
             isTouchView(event, listOf<View>(phone,password))
+        }
+        btn_register.setOnClickListener {
+            startActivity<RegisterActivity>()
         }
 
     }

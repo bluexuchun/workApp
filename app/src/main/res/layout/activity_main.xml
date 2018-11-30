@@ -6,39 +6,32 @@
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".ui.activity.MainActivity"
-        android:orientation="vertical"
 >
 
-    <include layout="@layout/header"></include>
-
-    <!--<com.moxun.tagcloudlib.view.TagCloudView-->
-            <!--android:id="@+id/tags"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_weight="1"-->
-            <!--app:autoScrollMode="uniform"-->
-            <!--app:radiusPercent="0.8"-->
-    <!--&gt;-->
-
-
-    <!--</com.moxun.tagcloudlib.view.TagCloudView>-->
-    <FrameLayout
-            android:id="@+id/fragmentframe"
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_above="@+id/bottomTab"
     >
+        <include layout="@layout/header"></include>
+        <FrameLayout
+                android:id="@+id/fragmentframe"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+        >
 
-    </FrameLayout>
+        </FrameLayout>
+    </LinearLayout>
+
 
     <com.roughike.bottombar.BottomBar
             android:id="@+id/bottomTab"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             app:bb_tabXmlResource="@xml/bottombar_tabs"
-            app:bb_behavior="underNavbar"
             app:bb_inActiveTabColor="@color/colorBlack"
             app:bb_activeTabColor="@color/colorMain"
     >
