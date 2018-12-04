@@ -1,14 +1,19 @@
 package widiazine.bluexuchun.workapp.ui.activity
 
+import android.annotation.TargetApi
 import android.app.Activity
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.Window
@@ -44,7 +49,18 @@ abstract class BaseActivity:AppCompatActivity(),CustomAdapt{
         setContentView(getLayoutResId())
         init()
         configUnits()
-
+        /**
+         * 判断版本
+         */
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            Log.v("VERSION","高版本")
+            var channelId = "chat"
+            var channelName = "聊天消息"
+            var importance = NotificationManager.IMPORTANCE_HIGH
+            createNotificationChannel(channelId,channelName,importance)
+        }else{
+            Log.v("VERSION","低版本")
+        }
     }
 
     /**
@@ -187,13 +203,26 @@ abstract class BaseActivity:AppCompatActivity(),CustomAdapt{
      * 参数二 字体颜色
      * 参数三 文字
      */
-    fun setFragmentBar(backgroundColor:Int?,textColor:Int,title:String?){
+    fun setFragmentBar(backgroundColor:Int?,textColor:Int?,title:String?){
         if(backgroundColor != null){
             commonHeader.setBackgroundColor(backgroundColor!!)
         }
-        header_title.setTextColor(textColor)
+        if(textColor != null){
+            header_title.setTextColor(textColor)
+        }
+
         header_title.text = title
         var toolBarParams = toolBar.layoutParams
         toolBarParams.height = 0
+    }
+
+    /**
+     * 消息队列通知
+     */
+    @TargetApi(Build.VERSION_CODES.O)
+    private fun createNotificationChannel(channelId:String,channelName:String,channelImportance:Int){
+        val channel = NotificationChannel(channelId,channelName,channelImportance)
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.createNotificationChannel(channel)
     }
 }

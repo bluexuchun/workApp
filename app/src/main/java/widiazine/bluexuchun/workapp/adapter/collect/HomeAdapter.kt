@@ -4,7 +4,9 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import org.jetbrains.anko.startActivity
 import widiazine.bluexuchun.workapp.model.collectModel.HomeWorkModel
+import widiazine.bluexuchun.workapp.ui.activity.Homework.WorkDetailActivity
 import widiazine.bluexuchun.workapp.widget.collectWidget.CollectHome
 
 class HomeAdapter(
@@ -26,8 +28,10 @@ class HomeAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val homeListItemView = holder.itemView as CollectHome
-
         homeListItemView.findView(HomeListItems[position])
+        homeListItemView.setOnClickListener {
+            context.startActivity<WorkDetailActivity>()
+        }
     }
 
 }

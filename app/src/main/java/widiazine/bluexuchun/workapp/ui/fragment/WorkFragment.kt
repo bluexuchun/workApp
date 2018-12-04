@@ -79,7 +79,7 @@ class WorkFragment:BaseFragment(),TabLayout.OnTabSelectedListener{
      * 初始化fragment
      */
     private fun initTabViewPager(){
-        val fragment = listOf<Fragment>(HomeworkFragment(),ImproveworkFragment(),WrongworkFragment())
+        val fragment = listOf<Fragment>(HomeworkFragment(),WrongworkFragment(),ImproveworkFragment())
         work_viewpager.adapter = CollectAdapter(childFragmentManager,fragment)
         work_viewpager.addOnPageChangeListener(object: ViewPager.SimpleOnPageChangeListener(){
             override fun onPageSelected(position: Int) {

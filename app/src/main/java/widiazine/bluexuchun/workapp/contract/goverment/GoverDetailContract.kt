@@ -7,5 +7,6 @@ interface GoverDetailContract{
     interface view{
         fun loadSuccess()
         fun loadFail()
+        fun sendMessage(title:String,message:String)
     }
 }

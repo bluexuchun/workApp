@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/radius"
+        android:elevation="6dp"
+>
+    <RelativeLayout
+            android:id="@+id/qtpicture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    >
+        <ImageView
+                android:id="@+id/qtpic"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@mipmap/qt"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+        />
+        <ImageView
+                android:id="@+id/statusInt"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_below="@+id/qtpic"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="-65dp"
+                android:layout_marginRight="15dp"
+                android:src="@mipmap/error"
+                android:visibility="gone"
+        />
+    </RelativeLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingHorizontal="13dp"
+            android:layout_below="@+id/qtpicture"
+    >
+        <TextView
+                android:id="@+id/qttype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="完形填空"
+                android:textColor="@color/colorBlack"
+                android:textSize="14dp"
+        />
+        <TextView
+                android:id="@+id/time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="13dp"
+                android:textColor="@color/colorGray"
+                android:text="2018-11-01 13:28"
+                android:gravity="right"
+        />
+    </LinearLayout>
+</RelativeLayout>

@@ -3,9 +3,17 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <TextView
+    <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/wrongrefresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="wrongwork"
-    />
+            android:paddingVertical="8dp"
+    >
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/wrongrecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

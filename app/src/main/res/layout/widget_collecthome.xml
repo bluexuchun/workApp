@@ -8,6 +8,7 @@
         android:layout_marginBottom="15dp"
         android:background="@drawable/radius"
         android:elevation="6dp"
+        android:id="@+id/hwquestion"
 >
     <RelativeLayout
             android:id="@+id/qtpicture"

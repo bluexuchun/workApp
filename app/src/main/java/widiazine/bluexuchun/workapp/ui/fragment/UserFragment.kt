@@ -1,5 +1,6 @@
 package widiazine.bluexuchun.workapp.ui.fragment
 
+import android.util.Log
 import kotlinx.android.synthetic.main.fragment_user.*
 import org.jetbrains.anko.support.v4.startActivity
 import widiazine.bluexuchun.workapp.R
