@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorWhite"
+>
+    <include layout="@layout/header"></include>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="15dp"
+                android:orientation="vertical"
+        >
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择年级"
+                    android:textSize="24dp"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+            />
+            <ImageView
+                    android:id="@+id/sprimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/sprimary"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:layout_marginBottom="15dp"
+            />
+            <ImageView
+                    android:id="@+id/sjunior"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/sjunior"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:layout_marginBottom="15dp"
+            />
+            <ImageView
+                    android:id="@+id/shigh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/shigh"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:layout_marginBottom="15dp"
+            />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

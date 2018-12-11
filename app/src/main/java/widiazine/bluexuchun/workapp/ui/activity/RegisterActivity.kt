@@ -1,10 +1,8 @@
 package widiazine.bluexuchun.workapp.ui.activity
 
 import android.Manifest
-import android.database.sqlite.SQLiteDatabase
+import android.graphics.Color
 import android.os.CountDownTimer
-import android.os.Message
-import android.util.Log
 import android.view.View
 import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.activity_register.*
@@ -12,10 +10,6 @@ import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import widiazine.bluexuchun.workapp.R
 import widiazine.bluexuchun.workapp.contract.RegisterContract
-import widiazine.bluexuchun.workapp.model.db.DataBaseHelper
-import widiazine.bluexuchun.workapp.model.db.DbControl
-import widiazine.bluexuchun.workapp.model.db.UserTables
-import widiazine.bluexuchun.workapp.model.db.database
 import widiazine.bluexuchun.workapp.presenter.RegisterPresenter
 import widiazine.bluexuchun.workapp.utils.Utils
 
@@ -72,22 +66,9 @@ class RegisterActivity:BaseActivity(),RegisterContract.View{
          * 设置状态栏的背景颜色
          * 以及字体颜色
          */
-        setStatusBar(this.window,1,R.color.colorWhite)
+        setStatusBar(this.window,1, Color.WHITE)
 
-        // 初始的权限申请
-        rxPermissions
-            .requestEach(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.INTERNET)
-            .subscribe(){
-                if(it.granted){
-                    // 权限通过
-                }else if(it.shouldShowRequestPermissionRationale){
-                    // 权限拒绝 但不是再也不显示
-                    toast("Permission Denied")
-                }else{
-                    // 权限拒绝并再也不显示
-                    toast("Permission Denied")
-                }
-            }
+
         register.setOnTouchListener { v, event ->
             isTouchView(event,listOf<View>(phone,password,repassword,code))
         }

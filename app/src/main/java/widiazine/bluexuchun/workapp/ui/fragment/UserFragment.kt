@@ -1,12 +1,11 @@
 package widiazine.bluexuchun.workapp.ui.fragment
 
-import android.util.Log
 import kotlinx.android.synthetic.main.fragment_user.*
 import org.jetbrains.anko.support.v4.startActivity
 import widiazine.bluexuchun.workapp.R
 import widiazine.bluexuchun.workapp.ui.activity.CollectActivity
 import widiazine.bluexuchun.workapp.ui.activity.SettingActivity
-import widiazine.bluexuchun.workapp.ui.activity.goverment.GoverAcitivity
+import widiazine.bluexuchun.workapp.ui.activity.Goverment.GoverAcitivity
 
 class UserFragment:BaseFragment(){
     override fun getLayoutResId(): Int {

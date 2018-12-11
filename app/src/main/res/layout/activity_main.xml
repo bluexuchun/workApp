@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_above="@+id/bottomTab"
+            android:layout_alignParentTop="true"
     >
         <include layout="@layout/header"></include>
         <FrameLayout
@@ -24,6 +24,74 @@
 
         </FrameLayout>
     </LinearLayout>
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/screenBox"
+            android:visibility = "visible"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+    >
+        <ImageView
+                android:id="@+id/setBitmap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+        />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerVertical="true"
+                android:paddingTop="70dp"
+        >
+            <LinearLayout
+                    android:id="@+id/checktype"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@mipmap/checkhw"
+                        android:layout_marginVertical="10dp"
+                />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="作业检查"
+                        android:textSize="14dp"
+                        android:textColor="@color/colorBlack"
+                />
+            </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/questiontype"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+            >
+                <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:src="@mipmap/questionhw"
+                        android:layout_marginVertical="10dp"
+                />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="疑难解答"
+                        android:textSize="14dp"
+                        android:textColor="@color/colorBlack"
+                />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
 
 
     <com.roughike.bottombar.BottomBar

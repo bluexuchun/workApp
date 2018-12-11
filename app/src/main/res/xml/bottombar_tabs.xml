@@ -11,8 +11,6 @@
             id="@+id/add"
             icon="@drawable/ic_plus"
             title=""
-            inActiveColor="#333333"
-            activeColor="#333333"
     />
     <tab
             id="@+id/work"

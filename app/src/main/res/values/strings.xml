@@ -6,4 +6,7 @@
     <string name="load_fail">加载失败</string>
     <string name="refresh_success">刷新成功</string>
     <string name="refresh_fail">刷新失败</string>
+    <string name="searchSuccess">搜索成功</string>
+    <string name="searchFail">搜索失败</string>
+    <string name="key_tips">请填写搜索信息</string>
 </resources>

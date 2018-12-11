@@ -108,12 +108,14 @@ abstract class BaseActivity:AppCompatActivity(),CustomAdapt{
      */
     fun isTouchView(event: MotionEvent, list: List<View>): Boolean {
         when(event.action){
-            MotionEvent.ACTION_DOWN -> println("起始位置：(${event.getX()}),(${event.getY()})")
+            MotionEvent.ACTION_DOWN -> {
+
+            }
         }
         for (item in list){
             var location = getViewPostition(item)
             if(event.getX() > location[0] && event.getX() < location[0] && event.getY() > location[2] && event.getY() < location[3]){
-                println("在控件内，不做操作")
+
             }else{
                 hideKeyboard()
             }

@@ -2,12 +2,11 @@ package widiazine.bluexuchun.workapp.adapter.collect
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import org.jetbrains.anko.startActivity
 import widiazine.bluexuchun.workapp.model.collectModel.GovermentModel
-import widiazine.bluexuchun.workapp.ui.activity.goverment.GoverDetailAcitivity
+import widiazine.bluexuchun.workapp.ui.activity.Goverment.GoverDetailAcitivity
 import widiazine.bluexuchun.workapp.widget.collectWidget.CollectGoverment
 
 class GovermentAdapter(

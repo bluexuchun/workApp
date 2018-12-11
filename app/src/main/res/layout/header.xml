@@ -6,7 +6,6 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:background="@drawable/wave"
         android:orientation="vertical"
-        android:gravity="center"
 >
     <TextView
             android:id="@+id/toolBar"
@@ -14,7 +13,7 @@
             android:layout_height="0dp"/>
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="45dp"
     >
         <ImageView
                 android:id="@+id/header_back"

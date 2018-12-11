@@ -96,10 +96,9 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="cropped" value="true" />
                                       <entry key="iconShape" value="NONE" />
-                                      <entry key="imageAsset" value="C:\Users\34506\Desktop\icon_active_home.png" />
-                                      <entry key="outputName" value="ic_active_home" />
+                                      <entry key="imageAsset" value="C:\Users\34506\Desktop\ic_loading.png" />
+                                      <entry key="outputName" value="ic_loading" />
                                     </map>
                                   </option>
                                 </PersistentState>

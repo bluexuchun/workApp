@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import org.jetbrains.anko.startActivity
 import widiazine.bluexuchun.workapp.model.collectModel.HomeWorkModel
-import widiazine.bluexuchun.workapp.ui.activity.Homework.WorkDetailActivity
+import widiazine.bluexuchun.workapp.ui.activity.HomeWork.WorkDetailActivity
 import widiazine.bluexuchun.workapp.widget.collectWidget.CollectHome
 
 class HomeAdapter(

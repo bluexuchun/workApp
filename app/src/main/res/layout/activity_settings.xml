@@ -23,7 +23,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingVertical="10dp"
+                    android:paddingVertical="15dp"
             >
 
                 <TextView
@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingVertical="10dp"
+                    android:paddingVertical="15dp"
             >
 
                 <TextView
@@ -120,6 +120,7 @@
 
         </LinearLayout>
         <LinearLayout
+                android:id="@+id/identifyBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -129,7 +130,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingVertical="10dp"
+                    android:paddingVertical="15dp"
             >
 
                 <TextView
@@ -179,7 +180,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingVertical="10dp"
+                    android:paddingVertical="15dp"
             >
 
                 <TextView
@@ -230,7 +231,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingVertical="10dp"
+                    android:paddingVertical="15dp"
             >
 
                 <TextView
@@ -281,7 +282,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingVertical="10dp"
+                    android:paddingVertical="15dp"
             >
 
                 <TextView
