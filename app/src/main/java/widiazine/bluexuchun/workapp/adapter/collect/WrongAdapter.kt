@@ -4,7 +4,9 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import org.jetbrains.anko.startActivity
 import widiazine.bluexuchun.workapp.model.collectModel.WrongModel
+import widiazine.bluexuchun.workapp.ui.activity.HomeWork.WorkDetailActivity
 import widiazine.bluexuchun.workapp.widget.collectWidget.CollectWrong
 
 class WrongAdapter(
@@ -39,6 +41,9 @@ class WrongAdapter(
          * 将数据渲染到CollectWrong里
          */
         wrongListItem.findView(wrongListItems[position])
+        wrongListItem.setOnClickListener {
+            context.startActivity<WorkDetailActivity>()
+        }
     }
 
 }

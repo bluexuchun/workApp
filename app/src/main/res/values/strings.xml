@@ -9,4 +9,5 @@
     <string name="searchSuccess">搜索成功</string>
     <string name="searchFail">搜索失败</string>
     <string name="key_tips">请填写搜索信息</string>
+    <string name="log_success">登陆成功</string>
 </resources>

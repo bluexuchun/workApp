@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+>
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="left|center"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:paddingVertical="8dp"
+    >
+        <TextView
+                android:id="@+id/viptext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="购买月卡"
+                android:layout_marginBottom="11dp"
+                android:textSize="15dp"
+                android:textColor="@color/colorBlack"
+        />
+        <TextView
+                android:id="@+id/viptime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2018-11-08 17:21"
+                android:textSize="11dp"
+                android:textColor="@color/colorText"
+        />
+    </LinearLayout>
+    <TextView
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-10.00"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginRight="10dp"
+    />
+    <TextView
+            android:id="@+id/vippay"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray"
+    />
+</RelativeLayout>

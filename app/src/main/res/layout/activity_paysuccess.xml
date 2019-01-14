@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="top|center"
+>
+    <include layout="@layout/header"></include>
+    <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="36dp"
+            android:src="@mipmap/paysuccess"
+    />
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_marginTop="54dp"
+    >
+        <Button
+                android:id="@+id/submit"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_login"
+                android:text="完成"
+                android:textSize="15dp"
+                android:textColor="@color/colorWhite"
+        />
+    </LinearLayout>
+</LinearLayout>

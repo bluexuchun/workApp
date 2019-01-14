@@ -7,12 +7,15 @@ import com.lzy.okgo.OkGo
 import com.lzy.okgo.callback.StringCallback
 import com.lzy.okgo.model.Response
 import widiazine.bluexuchun.workapp.contract.RegisterContract
+import widiazine.bluexuchun.workapp.model.UserModel
 import widiazine.bluexuchun.workapp.model.db.DbControl
 import widiazine.bluexuchun.workapp.model.db.UserTables
-import widiazine.bluexuchun.workapp.model.ResponseModel
 import widiazine.bluexuchun.workapp.utils.Urls
 
 class RegisterPresenter(val View:RegisterContract.View):RegisterContract.Presenter{
+
+    data class ResponseModel(val data: UserModel, val message:String, val status:Int)
+
     override fun sendCode(phoneNumber: String) {
 
 //        var params = HashMap<String, String>()
@@ -50,8 +53,9 @@ class RegisterPresenter(val View:RegisterContract.View):RegisterContract.Present
                     var responseData = gson.fromJson(response?.body(),ResponseModel::class.java)
                     if(responseData.status == 1){
                         var redata = responseData.data
-                        Dbase.insertInfo(redata.id,redata.phone)
-                        var userInfo = Dbase.selectInfo(redata.id)
+                        Dbase.insertInfo(null,
+                            redata.id!!,redata.phone,redata.password,redata.gid,redata.role_type,redata.realname,redata.avatar,redata.city,redata.address,redata.gender,redata.membershp_id,redata.createtime,redata.status,redata.signature,redata.integral,redata.start_time,redata.end_time)
+                        var userInfo = Dbase.selectInfo(redata.id!!)
                         Log.v("userInfo",userInfo)
                         if(userInfo != null){
                             View.registerSuccess()

@@ -43,6 +43,19 @@
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
         />
+        <TextView
+                android:id="@+id/common_title"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:textSize="13dp"
+                android:textColor="@color/colorMain"
+                android:text="common_title"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginRight="10dp"
+        />
     </RelativeLayout>
 
 

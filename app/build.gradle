@@ -9,7 +9,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "widiazine.bluexuchun.workapp"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -38,8 +38,10 @@ dependencies {
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'com.xiaosong520:doublewaveview:1.0.2'
-    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
     implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

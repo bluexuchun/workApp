@@ -80,6 +80,7 @@
                         android:orientation="horizontal"
                         android:layout_marginTop="5dp"
                         android:gravity="center_vertical"
+                        android:visibility="gone"
                 >
                     <TextView
                             android:id="@+id/childId"
@@ -120,6 +121,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:id="@+id/vip_btn"
         >
             <LinearLayout
                     android:layout_width="0dp"
@@ -151,6 +153,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical"
+                    android:id="@+id/coupon_btn"
             >
                 <ImageView
                         android:layout_width="wrap_content"
@@ -175,6 +178,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical"
+                    android:id="@+id/order_btn"
             >
                 <ImageView
                         android:layout_width="wrap_content"
@@ -264,6 +268,7 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:layout_marginBottom="20dp"
+                android:visibility="gone"
         >
             <LinearLayout
                     android:layout_width="0dp"
@@ -373,6 +378,7 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:layout_marginBottom="20dp"
+                android:visibility="gone"
         >
             <LinearLayout
                     android:layout_width="0dp"
@@ -428,6 +434,7 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:layout_marginBottom="20dp"
+                android:visibility="gone"
         >
             <LinearLayout
                     android:layout_width="0dp"

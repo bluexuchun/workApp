@@ -24,9 +24,9 @@ class UploadFragment:BaseFragment(){
         // 加载多少科目 循环多少次 并把科目的头像和名字传入
         // 假设有3个科目
         var sectionList = mutableListOf<SectionModel>(
-            SectionModel(null,"语文"),
-            SectionModel(null,"数学"),
-            SectionModel(null,"英文")
+            SectionModel(null,"语文",1),
+            SectionModel(null,"数学",2),
+            SectionModel(null,"英文",3)
         )
 
         uploadvp.apply {

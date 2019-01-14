@@ -8,18 +8,18 @@
         tools:context=".ui.activity.MainActivity"
 >
 
+
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_alignParentTop="true"
+            android:layout_above="@+id/bottomTab"
     >
         <include layout="@layout/header"></include>
         <FrameLayout
                 android:id="@+id/fragmentframe"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
         >
 
         </FrameLayout>
@@ -30,9 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/screenBox"
-            android:visibility = "visible"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:visibility = "gone"
     >
         <ImageView
                 android:id="@+id/setBitmap"

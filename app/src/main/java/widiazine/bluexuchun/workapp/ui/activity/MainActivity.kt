@@ -1,6 +1,7 @@
 package widiazine.bluexuchun.workapp.ui.activity
 
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import com.moxun.tagcloudlib.view.TagCloudView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.header.*
@@ -43,7 +45,7 @@ class MainActivity : BaseActivity(), TagCloudView.OnTagClickListener{
                 R.id.home -> {
                     setStatusBar(window,1,Color.WHITE)
                     setFragmentBar(Color.WHITE,Color.BLACK,"首页")
-                    commonHeader.visibility = View.VISIBLE
+                    commonHeader.visibility = View.GONE
                     fragment = MainFragment()
                     screenBox.visibility = View.GONE
                 }
@@ -54,8 +56,8 @@ class MainActivity : BaseActivity(), TagCloudView.OnTagClickListener{
                     screenBox.visibility = View.GONE
                 }
                 R.id.learn -> {
-                    setStatusBar(window,1,Color.BLUE)
-                    setFragmentBar(Color.WHITE,Color.BLUE,null)
+                    setStatusBar(window,1,Color.WHITE)
+                    setFragmentBar(Color.WHITE,Color.BLACK,"学习情况")
                     commonHeader.visibility = View.VISIBLE
                     fragment = LearnFragment()
                     screenBox.visibility = View.GONE
@@ -68,10 +70,9 @@ class MainActivity : BaseActivity(), TagCloudView.OnTagClickListener{
                     screenBox.visibility = View.GONE
                 }
                 R.id.add -> {
-                    var bitmap = UtilBitmap().getScreenshot(this,true)
+                    var bitmap = UtilBitmap().getDrawing(this)
                     setBitmap.setImageBitmap(bitmap)
-//                    UtilBitmap().blurImageView(this,setBitmap,5f, 0x33000000)
-
+                    UtilBitmap().blurImageView(this,setBitmap,5f, 0x33000000)
 
                     screenBox.visibility = View.VISIBLE
                     checktype.setOnClickListener {
@@ -82,10 +83,11 @@ class MainActivity : BaseActivity(), TagCloudView.OnTagClickListener{
                         type = 2
                         screenBox.visibility = View.GONE
                     }
-                    header_title.text = "上传"
-                    header_title.textColor = Color.WHITE
-                    setImgsBar()
+                    commonHeader.visibility = View.VISIBLE
                     commonHeader.setBackgroundResource(R.mipmap.head)
+                    header_title.setTextColor(resources.getColor(R.color.colorWhite))
+                    header_title.text = "上传"
+                    setImgsBar()
                     fragment = UploadFragment()
 
                 }

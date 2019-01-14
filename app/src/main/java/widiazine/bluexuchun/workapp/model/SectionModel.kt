@@ -1,3 +1,3 @@
 package widiazine.bluexuchun.workapp.model
 
-data class SectionModel(var sectionImg:String?,var sectionName:String)
+data class SectionModel(var sectionImg:String?,var sectionName:String,var sectionId:Int)

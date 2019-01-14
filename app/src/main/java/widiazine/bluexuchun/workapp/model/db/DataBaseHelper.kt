@@ -30,8 +30,22 @@ class DataBaseHelper(ctx: Context) :
         db?.createTable(
             UserTables.NAME,true,
                 UserTables.ID to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
-                UserTables.UID to TEXT,
-                UserTables.PHONE to TEXT
+                UserTables.UID to INTEGER,
+                UserTables.PHONE to TEXT,
+                UserTables.PASSWORD to TEXT,
+                UserTables.ROLE_TYPE to TEXT,
+                UserTables.REALNAME to TEXT,
+                UserTables.AVATAR to TEXT,
+                UserTables.CITY to TEXT,
+                UserTables.ADDRESS to TEXT,
+                UserTables.GENDER to TEXT,
+                UserTables.MEMBERSHP_ID to INTEGER,
+                UserTables.CREATETIME to TEXT,
+                UserTables.STATUS to INTEGER,
+                UserTables.SIGNATURE to INTEGER,
+                UserTables.INTEGRAL to INTEGER,
+                UserTables.START_TIME to TEXT,
+                UserTables.END_TIME to TEXT
             )
     }
 

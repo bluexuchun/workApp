@@ -24,6 +24,15 @@
                     android:layout_marginBottom="10dp"
             />
             <ImageView
+                    android:id="@+id/sbefore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/sbefore"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:layout_marginBottom="15dp"
+            />
+            <ImageView
                     android:id="@+id/sprimary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

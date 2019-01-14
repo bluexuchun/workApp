@@ -1,12 +1,9 @@
 package widiazine.bluexuchun.workapp.adapter
 
 import android.content.Context
-import android.support.v4.content.ContextCompat.getSystemService
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import widiazine.bluexuchun.workapp.model.ChildModel
 import widiazine.bluexuchun.workapp.widget.ChildSearch
 

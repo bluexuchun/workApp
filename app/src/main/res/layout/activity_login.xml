@@ -146,6 +146,7 @@
                         android:hint="请输入密码"
                         android:background="@null"
                         android:textSize="14dp"
+                        android:inputType="textPassword"
                 />
             </LinearLayout>
         </RelativeLayout>

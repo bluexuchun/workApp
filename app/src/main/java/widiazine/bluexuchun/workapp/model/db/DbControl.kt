@@ -1,6 +1,7 @@
 package widiazine.bluexuchun.workapp.model.db
 
 import android.content.Context
+import android.util.Log
 import org.jetbrains.anko.db.*
 import widiazine.bluexuchun.workapp.model.UserModel
 
@@ -27,7 +28,7 @@ class DbControl(ctx: Context,var table:String){
     /**
      * 查找指定手机的用户
      */
-    fun selectInfo(key:String):String?{
+    fun selectInfo(key:Int):String?{
         var value:String? = null
         var parser = classParser<UserModel>()
         database.use{
@@ -40,19 +41,61 @@ class DbControl(ctx: Context,var table:String){
     /**
      * 插入数据
      */
-    fun insertInfo(uid:String,phone:String){
+    fun insertInfo(
+                   id:Int?,
+                   uid:Int,
+                   phone:String,
+                   password:String,
+                   gid:String?,
+                   role_type:String?,
+                   realname:String?,
+                   avatar:String?,
+                   city:String?,
+                   address:String?,
+                   gender:String?,
+                   membershp_id:Int?,
+                   createtime:String?,
+                   status:Int?,
+                   signature:Int?,
+                   integral:Int?,
+                   start_time:String?,
+                   end_time:String?
+        ){
         database.use{
-            insert(table, UserTables.UID to uid,UserTables.PHONE to phone)
+            insert(
+                table,
+                UserTables.ID to id,
+                UserTables.UID to uid,
+                UserTables.PHONE to phone,
+                UserTables.PASSWORD to password,
+                UserTables.GID to gid,
+                UserTables.ROLE_TYPE to role_type,
+                UserTables.REALNAME to realname,
+                UserTables.AVATAR to avatar,
+                UserTables.CITY to city,
+                UserTables.ADDRESS to address,
+                UserTables.GENDER to gender,
+                UserTables.MEMBERSHP_ID to membershp_id,
+                UserTables.CREATETIME to createtime,
+                UserTables.STATUS to status,
+                UserTables.SIGNATURE to signature,
+                UserTables.INTEGRAL to integral,
+                UserTables.START_TIME to start_time,
+                UserTables.END_TIME to end_time
+            )
         }
     }
 
     /**
      * 更新用户
      */
-    fun updateInfo(uid:String,phone: String){
-        database.use {
-            update(table,
-                UserTables.PHONE to phone).whereSimple("${UserTables.UID} = \"${uid}\"").exec()
+    fun updateInfo(uid:Int,vararg values: Pair<String, Any?>){
+        for(i in values) {
+            database.use {
+                update(table,
+                    i
+                ).whereSimple("${UserTables.UID} = \"${uid}\"").exec()
+            }
         }
     }
 

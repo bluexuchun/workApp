@@ -1,6 +1,8 @@
 package widiazine.bluexuchun.workapp.ui.activity
 
 import android.Manifest
+import android.os.Handler
+import android.util.Log
 import android.view.View
 import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.activity_login.*
@@ -8,10 +10,18 @@ import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import widiazine.bluexuchun.workapp.R
 import widiazine.bluexuchun.workapp.contract.LoginContract
+import widiazine.bluexuchun.workapp.presenter.LoginPresenter
 
 class LoginActivity:BaseActivity(),LoginContract.View{
 
     private var rxPermissions = RxPermissions(this)
+
+    private var presenter = LoginPresenter(this)
+
+    val handler by lazy{
+        Handler()
+    }
+
     override fun specialSit(): Boolean {
         return true
     }
@@ -42,6 +52,9 @@ class LoginActivity:BaseActivity(),LoginContract.View{
         allTouch.setOnTouchListener { v, event ->
             isTouchView(event, listOf<View>(phone,password))
         }
+        /**
+         * 点击注册跳转注册页面
+         */
         btn_register.setOnClickListener {
             startActivity<RegisterActivity>()
         }
@@ -51,21 +64,38 @@ class LoginActivity:BaseActivity(),LoginContract.View{
         skip_btn.setOnClickListener {
             startActivity<MainActivity>()
         }
-
+        /**
+         * 点击登陆执行登陆操作
+         */
+        btn_login.setOnClickListener {
+            var pntext = phone.text.trim().toString()
+            var pwtext = password.text.trim().toString()
+            presenter.login(pntext,pwtext,applicationContext)
+        }
     }
 
     /**
      * 登陆成功
      */
-    override fun onLoadSuccess() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onLoadSuccess(type: String,uid:Int?) {
+        toast(R.string.log_success)
+        Log.v("uid","${uid}")
+        handler.postDelayed({
+            if(type == "-1"){
+//                startActivity<CidentifyActivity>("uid" to uid)
+                startActivity<MainActivity>("uid" to uid)
+            }else{
+                startActivity<MainActivity>("uid" to uid)
+            }
+            finish()
+        },2000)
     }
 
     /**
      * 登陆失败
      */
-    override fun onLoadFail() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onLoadFail(message:String) {
+        toast("${message}")
     }
 
     override fun isBaseOnWidth(): Boolean {

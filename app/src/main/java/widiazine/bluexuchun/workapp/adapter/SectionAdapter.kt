@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.component_section.view.*
+import org.jetbrains.anko.startActivity
 import widiazine.bluexuchun.workapp.R
 import widiazine.bluexuchun.workapp.model.SectionModel
+import widiazine.bluexuchun.workapp.ui.activity.UploadDetailActivity
 import widiazine.bluexuchun.workapp.utils.Preference
 
 class SectionAdapter(
@@ -41,8 +43,10 @@ class SectionAdapter(
         container.addView(viewItem)
 
         viewItem.setOnClickListener {
+            Log.v("sectionId","${listView[position].sectionId}")
             Log.v("type","${type}")
             Log.v("sectionName","${it.sectionName}")
+            context.startActivity<UploadDetailActivity>()
         }
         return viewItem
     }
